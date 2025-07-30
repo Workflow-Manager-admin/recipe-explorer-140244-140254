@@ -1,27 +1,30 @@
 /* CSS Variables for Theme Management */
 :root {
-  /* Light theme colors */
-  --primary: #3f51b5;
-  --secondary: #f50057;
-  --accent: #ffd700;
+  /* Grayscale light theme colors */
+  --primary: #222;             /* replaced #3f51b5 */
+  --secondary: #444;           /* replaced #f50057 */
+  --accent: #ccc;              /* replaced #ffd700 */
   --bg-primary: #fff;
-  --bg-secondary: #f5f7fa;
-  --text-primary: #222;
-  --text-secondary: #666;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #111;
+  --text-secondary: #777;
   --border-color: #e0e0e0;
-  --button-bg: var(--primary);
+  --button-bg: #222;
   --button-text: #fff;
 }
 
 [data-theme="dark"] {
-  /* Dark theme colors */
+  /* Grayscale dark theme colors */
+  --primary: #eee;
+  --secondary: #bbb;
+  --accent: #555;
   --bg-primary: #1a1a1a;
-  --bg-secondary: #282c34;
-  --text-primary: #ffffff;
-  --text-secondary: #61dafb;
+  --bg-secondary: #232323;
+  --text-primary: #fafafa;
+  --text-secondary: #bbb;
   --border-color: #404040;
-  --button-bg: #0056b3;
-  --button-text: #ffffff;
+  --button-bg: #fafafa;
+  --button-text: #222;
 }
 
 .App {
@@ -110,10 +113,10 @@
 /* ------ RECIPE EXPLORER LAYOUT & THEME ------ */
 
 .header {
-  background: var(--primary);
-  color: #fff;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 0.75rem 0;
-  box-shadow: 0 4px 10px 0 rgba(63,81,181,.06);
+  box-shadow: 0 4px 10px 0 rgba(34,34,34,.06);
   position: sticky;
   top: 0;
   z-index: 99;
@@ -159,7 +162,7 @@
   transition: border 0.2s;
 }
 .search-form:focus-within {
-  border: 2px solid var(--accent);
+  border: 2px solid #bbb;
 }
 .search-input {
   flex: 1;
@@ -171,7 +174,7 @@
   outline: none;
 }
 .search-btn {
-  background: var(--accent);
+  background: #ccc;
   color: #222;
   border: none;
   font-size: 1.25rem;
@@ -181,7 +184,7 @@
   transition: background 0.2s;
 }
 .search-btn:hover, .search-btn:focus {
-  background: var(--secondary);
+  background: #444;
   color: #fff;
 }
 
@@ -196,7 +199,7 @@
   background: var(--bg-secondary);
   border: 1.5px solid var(--border-color);
   border-radius: 20px;
-  box-shadow: 0 4px 16px 0 rgba(63,81,181,.05);
+  box-shadow: 0 4px 16px 0 rgba(34,34,34,.07);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -205,8 +208,8 @@
   outline: none;
 }
 .recipe-card:focus, .recipe-card:hover {
-  box-shadow: 0 8px 24px 0 rgba(245, 0, 87, 0.09);
-  border: 2px solid var(--accent);
+  box-shadow: 0 8px 24px 0 rgba(80,80,80,0.13);
+  border: 2px solid #bbb;
   transform: translateY(-2px) scale(1.012);
 }
 .card-img-container {
@@ -259,7 +262,7 @@
   font-size: 1.22rem;
   margin: 2.5rem auto;
 }
-.error { color: var(--secondary); font-weight: bold; }
+.error { color: #888; font-weight: bold; }
 
 
 /* ---- MODAL ---- */
@@ -267,7 +270,7 @@
   position: fixed;
   z-index: 200;
   inset: 0;
-  background: rgba(63,81,181,0.11);
+  background: rgba(34,34,34,0.11);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,7 +283,7 @@
 .modal {
   background: var(--bg-primary);
   border-radius: 18px;
-  box-shadow: 0 8px 34px 0 rgba(63,81,181,.12);
+  box-shadow: 0 8px 34px 0 rgba(34,34,34,.14);
   max-width: 450px;
   width: 96vw;
   margin: auto;
@@ -299,8 +302,8 @@
   top: 17px;
   right: 18px;
   font-size: 1.3rem;
-  background: var(--secondary);
-  color: #fff;
+  background: #bbb;
+  color: #232323;
   border: none;
   border-radius: 50%;
   width: 32px;
@@ -313,8 +316,8 @@
   transition: background 0.13s;
 }
 .close-btn:hover, .close-btn:focus {
-  background: var(--accent);
-  color: #222;
+  background: #eee;
+  color: #232323;
 }
 .modal-img-wrap {
   margin-bottom: 1rem;
@@ -330,7 +333,7 @@
   max-width: 350px;
   object-fit: cover;
   border-radius: 11px;
-  box-shadow: 0 2px 16px 0 rgba(245, 0, 87, 0.04);
+  box-shadow: 0 2px 16px 0 rgba(130,130,130,0.04);
 }
 .modal-content h2 {
   margin: 0 0 0.6rem 0;
